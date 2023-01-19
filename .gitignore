@@ -1,0 +1,15 @@
+node_modules
+build
+certs/**/*
+parsed
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+config
+
+package-lock.json
+source/config/config.ts
+configs/config.json
