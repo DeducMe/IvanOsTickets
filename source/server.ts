@@ -67,10 +67,10 @@ app.use((req, res, next) => {
 });
 
 app.use(async (req, res, next) => {
-    const authed = await checkAuthToken(res, req);
-    if (!authed.success) {
-        return await errorHandler(res, { message: authed.message }, 405);
-    }
+    // const authed = await checkAuthToken(res, req);
+    // if (!authed.success) {
+    //     return await errorHandler(res, { message: authed.message }, 405);
+    // }
     next();
 });
 
