@@ -9,7 +9,9 @@ const routeSchema: Schema = new Schema(
         district: { type: String, required: false },
         region: { type: String, required: false },
         distanceKm: { type: Number, required: false },
-        weightKg: { type: Number, required: false }
+        weightKg: { type: Number, required: false },
+        dispatch: { type: Date, required: false },
+        arrival: { type: Date, required: false }
     },
     {
         strict: true,
