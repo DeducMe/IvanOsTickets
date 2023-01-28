@@ -96,5 +96,10 @@ app.use('/api/dispatcher', dispatcherRoute);
 app.use('/api/bus', busRoute);
 // app.use(errorHandler);
 
+app.delete('/api/wipe', async (req, res, next) => {
+    mongoose.connection.dropDatabase();
+    return res.status(200).json({});
+});
+
 const httpServer = http.createServer(app);
 httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running on http://${config.server.hostname}:${config.server.port}/`));
