@@ -6,7 +6,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
     try {
         let { number, route, ticket, dispatcher, bus, driver } = req.body;
 
-        const transportation = new Transportation({ name });
+        const transportation = new Transportation({ number, route, ticket, dispatcher, bus, driver });
 
         const data = await transportation.save();
         sendBackHandler(res, 'transportation', data);
@@ -24,7 +24,7 @@ const putTransportation = async (req: Request, res: Response, next: NextFunction
 };
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
-    const data = await Transportation.find().exec();
+    const data = await Transportation.find().populate(['dispatcher', 'ticket', 'bus', 'driver']).exec();
     sendBackHandler(res, 'transportation', data);
 };
 
