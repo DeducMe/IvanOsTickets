@@ -24,7 +24,7 @@ const putTransportation = async (req: Request, res: Response, next: NextFunction
 };
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
-    const data = await Transportation.find().populate(['dispatcher', 'ticket', 'bus', 'driver']).exec();
+    const data = await Transportation.find().populate(['route', 'dispatcher', 'ticket', 'bus', 'driver']).exec();
     sendBackHandler(res, 'transportation', data);
 };
 
