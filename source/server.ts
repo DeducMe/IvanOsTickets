@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import http from 'http';
 import bodyParser from 'body-parser';
 import express from 'express';

@@ -8,8 +8,8 @@ parsed
 *.key
 *.mobileprovision
 *.orig.*
-config
+# config
 
 package-lock.json
-source/config/config.ts
-configs/config.json
+# source/config/config.ts
+# configs/config.json
